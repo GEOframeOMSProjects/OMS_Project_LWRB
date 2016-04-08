@@ -15,7 +15,6 @@ resource "$oms_prj/lib"
         "reader_data_airT"            "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
         "reader_data_soilT"           "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
         "reader_data_CI"              "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
-        "vreader_station"             "org.jgrasstools.gears.io.shapefile.OmsShapefileFeatureReader"
         "l"                           "lwrbPointCase.Lwrb"
         "writer_down"                 "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
         "writer_up"                   "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
@@ -49,8 +48,7 @@ resource "$oms_prj/lib"
         "reader_data_CI.tEnd"                 "${endDate}"
         "reader_data_CI.tTimestep"            60
         "reader_data_CI.fileNovalue"          "-9999"
-        
-         "vreader_station.file"                "${home}/data/stations.shp"
+
 
         // parameter of the lwrb component, see documentation for further datails
         "l.X"               0.70
@@ -59,7 +57,6 @@ resource "$oms_prj/lib"
         "l.epsilonS"        0.98
         "l.A_Cloud"         0
         "l.B_Cloud"         1
-        "l.fStationsid"  "cat"
             
         // parameter of the writing component    
         "writer_down.file"                   "${home}/output/downwelling.csv" 
@@ -80,7 +77,7 @@ resource "$oms_prj/lib"
         "reader_data_airT.outData"             "l.inAirTemperatureValues"
         "reader_data_soilT.outData"            "l.inSoilTempratureValues"
         "reader_data_CI.outData"               "l.inClearnessIndexValues"
-        "vreader_station.geodata"              "l.inStations"
+
         "l.outHMlongwaveDownwelling"            "writer_down.inData"
         "l.outHMlongwaveUpwelling"              "writer_up.inData"
         "l.outHMlongwave"                       "writer_long.inData"
