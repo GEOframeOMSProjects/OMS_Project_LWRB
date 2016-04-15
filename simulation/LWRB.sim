@@ -14,7 +14,10 @@ resource "$oms_prj/lib"
         // components to be called: reader input data, lwrb and writer output data
         "reader_data_airT"            "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
         "reader_data_soilT"           "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
+         "reader_data_H"              "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
         "reader_data_CI"              "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
+        "reader_sky"                  "org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
+        "vreader_station"             "org.jgrasstools.gears.io.shapefile.OmsShapefileFeatureReader"
         "l"                           "lwrbPointCase.Lwrb"
         "writer_down"                 "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
         "writer_up"                   "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
@@ -48,6 +51,13 @@ resource "$oms_prj/lib"
         "reader_data_CI.tEnd"                 "${endDate}"
         "reader_data_CI.tTimestep"            60
         "reader_data_CI.fileNovalue"          "-9999"
+        
+        
+        "reader_sky.file"                      "${home}/data/skyview.asc"
+        "vreader_station.file"                  "${home}/data/stations.shp"
+        
+        
+        "l.fStationsid"                      "cat" 
 
 
         // parameter of the lwrb component, see documentation for further datails
@@ -77,7 +87,8 @@ resource "$oms_prj/lib"
         "reader_data_airT.outData"             "l.inAirTemperatureValues"
         "reader_data_soilT.outData"            "l.inSoilTempratureValues"
         "reader_data_CI.outData"               "l.inClearnessIndexValues"
-
+        "reader_sky.outRaster"                 "l.inSkyview"          
+        "vreader_station.geodata"              "l.inStations"
         "l.outHMlongwaveDownwelling"            "writer_down.inData"
         "l.outHMlongwaveUpwelling"              "writer_up.inData"
         "l.outHMlongwave"                       "writer_long.inData"
