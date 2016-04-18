@@ -21,7 +21,6 @@ resource "$oms_prj/lib"
         "l"                           "lwrbPointCase.Lwrb"
         "writer_down"                 "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
         "writer_up"                   "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
-        "writer_long"                 "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
             
          
    }
@@ -77,10 +76,6 @@ resource "$oms_prj/lib"
         "writer_up.tStart"                   "${startDate}"
         "writer_up.tTimestep"                60
         
-         "writer_long.file"                  "${home}/output/longwave.csv" 
-        "writer_long.tStart"                 "${startDate}"
-        "writer_long.tTimestep"              60
-
    }
     connect {
         
@@ -91,7 +86,6 @@ resource "$oms_prj/lib"
         "vreader_station.geodata"              "l.inStations"
         "l.outHMlongwaveDownwelling"            "writer_down.inData"
         "l.outHMlongwaveUpwelling"              "writer_up.inData"
-        "l.outHMlongwave"                       "writer_long.inData"
 
    }
 
