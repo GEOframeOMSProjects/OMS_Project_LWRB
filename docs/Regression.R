@@ -329,41 +329,41 @@
 	
    #Konzelmann et al [1994]
 	if(model==8){
-		a0=1.651e+01 
-		a1=-1.805e-01 
-		a2=-8.771e-01 
-		a3=-2.562e-02   
-		a4=4.719e-04
-		a5=7.480e-03   
-		a6=3.054e-04     
-		a7=1.647e-03 
-		a8=-1.041e-04  
-		a9=-6.576e-04 
-		a10=-8.944e-06 
-		a11=-1.744e-05  
-		a12=2.125e-05 
-		a13=2.708e-07     
-		a14=1.830e-06 
-		a15=-4.422e-08    
+		a0=1.75e+01 
+		a1=-2.22e-01 
+		a2=-9.27e-01
+		a3=-3.10e-02 
+		a4=-8.15e-03
+		a5=1.08e-02 
+		a6=4.12e-04     
+		a7=1.86e-03  
+		a8=8.63e-05 
+		a9=1.07e-04  
+		a10=1.18e-05  
+		a11=-2.31e-05  
+		a12=3.83e-06
+		a13=-1.18e-07      
+		a14=4.50e-08
+		a15=-1.03e-08     
 		
 		Xr=a0+a1*mydata$RH+a2*mydata$T+a3*mydata$P+a4*mydata$Elev+a5*mydata$RH*mydata$T+a6*mydata$RH*mydata$P+a7*mydata$T*mydata$P+a8*mydata$RH*mydata$Elev+a9*mydata$T*mydata$Elev+a10*mydata$P*mydata$Elev+a11*mydata$RH*mydata$T*mydata$P+a12*mydata$RH*mydata$T*mydata$Elev+a13*mydata$RH*mydata$P*mydata$Elev+a14*mydata$T*mydata$P*mydata$Elev+a15*mydata$RH*mydata$T*mydata$P*mydata$Elev
 		
-		a0=-4.399e+01
-		a1= 5.119e-01 
-		a2= 2.450e+00 
-		a3=6.826e-02  
-		a4=3.294e-03 
-		a5=-2.184e-02  
-		a6=-8.136e-04  
-		a7=-4.361e-03 
-		a8=1.966e-04 
-		a9=1.377e-03
-		a10=1.662e-05    
-		a11=4.646e-05 
-		a12= -4.914e-05
-		a13= -6.044e-07
-		a14=  -4.214e-06   
-		a15=1.056e-07  
+		a0=-2.16e+01 
+		a1=2.77e-01 
+		a2=1.06e+00  
+		a3=3.83e-02   
+		a4=1.22e-02 
+		a5=-1.02e-02  
+		a6=-4.95e-04  
+		a7=-2.06e-03 
+		a8=-1.38e-04
+		a9=-1.34e-04
+		a10=-1.49e-05   
+		a11=2.35e-05 
+		a12=-5.26e-06 
+		a13=1.62e-07
+		a14=-2.67e-07   
+		a15=1.50e-08 
 		
 		Yr=a0+a1*mydata$RH+a2*mydata$T+a3*mydata$P+a4*mydata$Elev+a5*mydata$RH*mydata$T+a6*mydata$RH*mydata$P+a7*mydata$T*mydata$P+a8*mydata$RH*mydata$Elev+a9*mydata$T*mydata$Elev+a10*mydata$P*mydata$Elev+a11*mydata$RH*mydata$T*mydata$P+a12*mydata$RH*mydata$T*mydata$Elev+a13*mydata$RH*mydata$P*mydata$Elev+a14*mydata$T*mydata$P*mydata$Elev+a15*mydata$RH*mydata$T*mydata$P*mydata$Elev
 		print("Xr")
