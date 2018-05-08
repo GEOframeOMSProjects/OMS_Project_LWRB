@@ -11,7 +11,6 @@ resource "$oms_prj/lib"
  model( ) {
    components {
    	"readerAirTemperature"			"org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
-   //"readerDem"              	   	"org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
    	"readerSkyViewFactor"			"org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
    //"readerClearnessIndex"			"org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
    	"lwrb"							"lwrbRasterCase.Lwrb"
@@ -20,25 +19,25 @@ resource "$oms_prj/lib"
     "writerUpwelling"             	"org.jgrasstools.gears.io.rasterwriter.OmsRasterWriter" 
    	}
    	parameter{
-   		//"readerDem.file"			"${home}/output/DEM.asc"
+   	
    		"readerAirTemperature.file"	"${home}/data/DataRaster/kriging_interpolated_temp_20080722_1500.asc"
    		"readerSkyViewFactor.file"	"${home}/data/DataRaster/skyviewFactor.asc"
    		
-   		//"lwrb.tStartDate"			"${startDate}"   
-   		//"lwrb.doHourly"			true   //or false if daily    		        
+  		        
    		"lwrb.X"					0.7						
         "lwrb.Y"          		    5.95
         "lwrb.model"           		"6"
         "lwrb.epsilonS"        		0.98
         "lwrb.A_Cloud"         		0.4				
         "lwrb.B_Cloud"         		0.8	
+        
         "writerUpwelling.file"		"${home}/output/LwrbUpWellingRaster.asc"      
-        "writerDownwelling.file"	"${home}/output/LwrbDownWellingRaster.asc"      
+        "writerDownwelling.file"	"${home}/output/LwrbDownWellingRaster.asc"  
+            
         }
         connect {     
         "readerAirTemperature.outRaster"	"lwrb.inAirTempGrid"      
         "readerAirTemperature.outRaster"	"lwrb.inSoilTempGrid"      
-     //   "readerDem.outRaster"				"lwrb.inDem"    
         "readerSkyViewFactor.outRaster"		"lwrb.inSkyviewGrid"
         //"readerClearnessIndex.outData"	"lwrb.inClearnessIndexValues"          
         "lwrb.outLongwaveUpwellingGrid"		"writerUpwelling.inRaster"
